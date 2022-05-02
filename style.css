@@ -22,6 +22,7 @@ body {
     --background-color: #111; 
 }
 
+/* scroll bar styling*/
 ::-webkit-scrollbar {
     width: .5rem;
   }
@@ -43,6 +44,7 @@ body {
     background: #b30000;
   }
 
+  
 .home {
     width: 100vw;
     height: 100vh;

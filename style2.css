@@ -41,6 +41,7 @@ span {
     color: var(--default-text-color);
     max-width: 100vw;
     overflow: hidden;
+    background-color: var(--bg-color-2);
 }
 
 header {
@@ -79,12 +80,12 @@ header p {
     position: absolute;
     font-size: 25px;
     right: 2rem;
+    transition: var(--transition);
 }
 .light_dark_theme:hover {
     color: var(--primary-color);
     cursor: pointer;
     transform: scale(1.1);
-    transition: var(--transition);
 }
 
 /* menu button styling */
@@ -97,11 +98,108 @@ header p {
 header.sticky {
     width: 100vw;
     position: fixed;
-    background-color: var(--bg-color-2);
     transition: var(--transition);
     z-index: 100;
+    background-color: var(--primary-bg-color);
 }
 
 header.sticky span {
     color: var(--primary-color);
+}
+
+/* home main section */
+.main {
+    position: absolute;
+    /* top: 10rem; */
+    top: calc((100vh - 80px)/2.8);      /*total view height will be subtracted by 80px(i.e. nav-bar) and the result will be divided by 2.8 to get responsive top-position
+    ----Here, top: 31.0760667904vh */
+    
+    font-size: 45px;
+    left: 70px;
+    font-weight: bold;
+}
+
+.main span {
+    font-size: 55px;
+    text-shadow: 5px 5px 3px var(--primary-bg-color);
+}
+
+.main span.name {
+    color: var(--default-text-color);
+}
+
+.home_page_img {
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    top: calc((100vh - 80px)/2.5);
+    right: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: 5px 5px 15px var(--primary-bg-color);
+    transition: var(--transition);
+}
+
+.home_page_img:hover {
+    transform: scale(1.01);
+}
+
+.btn {
+    background: var(--primary-color);
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    color: var(--btn-text-color);
+    font-weight: bold;
+    transition: var(--transition);
+    margin-top: 70px;
+}
+
+.btn:hover{
+    border: 3px solid var(--primary-color);
+    background: none;
+    color: var(--primary-color);
+}
+
+.img {
+    width: 350px;
+    height: 375px;
+    border-radius: var(--border-radius);
+}
+
+/* responsive media query starts from here */
+
+/* for screen size less than 1150px width */
+@media (max-width: 1150px) {
+    .main {
+        font-size: 35px;
+        top: 11.5rem;
+    }
+
+    .main span {
+        font-size: 45px;
+    }
+
+    .home_page_img {
+        width: 450px;
+        height: 225px;
+        top: 200px;
+        right: 35px;
+    }
+}
+
+/* for screen size less than 990px width */
+@media (max-width: 990px) {
+    .nav-links {
+        display: none;
+    }
+
+    .light_dark_theme{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        transition: var(--transition);
+        z-index: 99;
+    }
 }
