@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +7,6 @@
     text-decoration: none;
     user-select: none;
 }
-
 body {
     --primary-color: #2c4bff;
     --default-text-color: black;
@@ -17,24 +15,23 @@ body {
     --transition: all 300ms linear;
     --primary-bg-color: white;
     --bg-color-2: #f4f5fe; 
+    --box-shadow: 5px 5px 15px var(--primary-bg-color);
+    --transform-img: scale(1.01);
 
     overflow-x: hidden;
     display: grid;
-    /* grid-template-rows: repeat(3, 1fr) .8fr repeat(2, 1fr) auto;
-    max-height: 1000px; */
+     /* grid-template-rows: repeat(3, 1fr) .8fr repeat(2, 1fr) auto; */
+    /* max-height: auto; */
 }
-
 body.dark {
     --primary-color: #4a72fa;
     --default-text-color: white;
     --primary-bg-color: #111;
     --bg-color-2: #181b21; 
 }
-
 span {
     color: var(--primary-color);
 }
-
 .home {
     width: 100vw;
     height: 100vh;
@@ -43,7 +40,6 @@ span {
     overflow: hidden;
     background-color: var(--bg-color-2);
 }
-
 header {
     display: flex;
     align-items: center;
@@ -52,30 +48,24 @@ header {
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
 }
-
 header p {
     font-size: 2rem;
     padding-left: 2rem;
     font-weight: bold;
 }
-
-
 .nav-links {
     display: flex;
     gap: 3em;
     padding-right: 6rem;
     list-style-type: none;
 }
-
 .nav-links > li > a {
     color: var(--default-text-color);
     transition: var(--transition);
 }
-
 .nav-links > li > a:hover {
     color: var(--primary-color);
 }
-
 .light_dark_theme{
     position: absolute;
     font-size: 25px;
@@ -92,17 +82,15 @@ header p {
 .menu-btn {
     display: none;
     cursor: pointer;
-    padding-right: 20px;
+    margin-right: 20px;
 }
-
 header.sticky {
     width: 100vw;
     position: fixed;
     transition: var(--transition);
     z-index: 100;
-    background-color: var(--primary-bg-color);
+    background-color: var(--bg-color-2);
 }
-
 header.sticky span {
     color: var(--primary-color);
 }
@@ -118,16 +106,13 @@ header.sticky span {
     left: 70px;
     font-weight: bold;
 }
-
 .main span {
     font-size: 55px;
     text-shadow: 5px 5px 3px var(--primary-bg-color);
 }
-
 .main span.name {
     color: var(--default-text-color);
 }
-
 .home_page_img {
     position: absolute;
     width: 500px;
@@ -135,14 +120,12 @@ header.sticky span {
     top: calc((100vh - 80px)/2.5);
     right: 50px;
     border-radius: var(--border-radius);
-    box-shadow: 5px 5px 15px var(--primary-bg-color);
+    box-shadow: var(--box-shadow);
     transition: var(--transition);
 }
-
 .home_page_img:hover {
-    transform: scale(1.01);
+    transform: var(--transform-img);
 }
-
 .btn {
     background: var(--primary-color);
     width: 100px;
@@ -155,18 +138,161 @@ header.sticky span {
     transition: var(--transition);
     margin-top: 70px;
 }
-
 .btn:hover{
     border: 3px solid var(--primary-color);
     background: none;
     color: var(--primary-color);
 }
 
-.img {
-    width: 350px;
-    height: 375px;
-    border-radius: var(--border-radius);
+/* about-me section */
+.about_me {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 80px;
+    background-color: var(--primary-bg-color);
 }
+.title {
+    position: relative;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    color: var(--default-text-color);
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    /* position: relative; */
+}
+.title::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    bottom: 0px;
+    height: 3px;
+    background: var(--default-text-color);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.about_me .title::before {
+    bottom: 0px;
+}
+.title::after {
+    content: "who I am";
+    position: absolute;
+    background-color: var(--primary-bg-color);
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    padding: 5px;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1rem;
+    z-index: 11;
+}
+.about_me_wrapper {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    gap: 10rem;
+}
+.img {
+    width: 300px;
+    height: 325px;
+    border-radius: var(--border-radius);
+    box-shadow: 5px 5px 15px var(--bg-color-2);
+    transition: var(--transition);
+}
+.img:hover {
+    transform: var(--transform-img);
+}
+.description {
+    color: var(--default-text-color);
+}
+.description :first-child {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
+}
+.download_cv {
+    width: 120px;
+}
+.services {
+    background: var(--primary-bg-color);
+}
+.services .title::after {
+    content: "what I provide";
+}
+.service_lists {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 50px 30px;
+    gap: 1rem;
+}
+.service_lists > div {
+    padding: 2rem;
+    color: var(--default-text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--bg-color-2);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+.service_lists > div:hover {
+    transform: scale(1.03);
+    box-shadow: var(--box-shadow);
+}
+.heading {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*skill section*/
+
+.skills {
+    background: var(--primary-bg-color);
+}
+.skills .title::after {
+    content: "what I know"
+}
+.my_skills {
+    display: flex;
+    padding: 10px 100px 50px;
+    align-items: center;
+    gap: 5rem;
+}
+.progress {
+    display: flex;
+    flex-direction: column;
+}
+.progress > label {
+    width: 100%;
+    font-weight: bold;
+    position: relative;
+    color: var(--default-text-color);
+}
+label span{
+    position: absolute;
+    right: 0px;
+}
+
+/* progress bar styling */
+progress {
+    margin-top: -12px;
+    appearance: none;
+    width: 30vw;
+}
+progress::-webkit-progress-bar {
+    height: 8px;
+    background-color: #eee;
+    color: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+  progress::-webkit-progress-value {
+      border-radius: 10px; 
+      background-color: var(--primary-color);
+  }
 
 /* responsive media query starts from here */
 
@@ -176,11 +302,9 @@ header.sticky span {
         font-size: 35px;
         top: 11.5rem;
     }
-
     .main span {
         font-size: 45px;
     }
-
     .home_page_img {
         width: 450px;
         height: 225px;
@@ -194,12 +318,118 @@ header.sticky span {
     .nav-links {
         display: none;
     }
-
     .light_dark_theme{
         position: fixed;
         bottom: 20px;
         right: 20px;
         transition: var(--transition);
         z-index: 99;
+    }
+    .menu-btn {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        z-index: 999;
+        transition: var(--transition);
+    }
+    .menu-btn.animation {
+        color: var(--primary-color);
+    }
+
+    /* block nav-bar styling */
+    .nav-links.active {
+        display: block;
+        padding: 0;
+        background-color: var(--primary-bg-color);
+        width: 100%;
+        height: 100vh;
+        scroll-behavior: none;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .main {
+        position: relative;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        /* top: 10rem; */
+        font-size: 30px;
+        font-weight: bold;
+        display: grid;
+        grid-template-rows: repeat(2,1fr);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .main span {
+        font-size: 35px;
+    }
+    .home_page_img {
+       display: none;
+    }
+    .hire-btn {
+        margin-top: 0;
+        justify-self: center;
+    }
+    .about_me_wrapper {
+        gap: 5rem;
+    }
+    .img {
+        width: 250px;
+        height: 275px;
+    }
+    .description :first-child {
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 50px;
+    }
+    .description {
+        font-size: 12px;
+    }
+    .my_skills {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .btn {
+        margin-top: 40px;
+    }
+    .progress {
+        padding: 30px;
+        background-color: var(--bg-color-2);
+        border-radius: var(--border-radius);
+    }
+    progress {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .about_me {
+        padding: 20px 0px;
+        height: 120%;
+    }
+    .about_me_wrapper {
+        margin: 30px 50px;
+        padding: 0px 0px;
+        gap: 3rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .download_cv {
+        width: 100px;
+        height: 30px;
+        font-size: 10px;
+    }
+    .service_lists {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) );
+    }
+    .my_skills {
+        padding: 10px 50px 50px;
     }
 }
