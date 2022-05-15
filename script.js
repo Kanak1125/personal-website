@@ -59,28 +59,3 @@ $(document).ready(function() {
         }
     })
 })
-
-//hover eventListener for services section..
-const services = document.querySelector('.service_lists');
-const servicesChildren = services.querySelectorAll('div');
-console.log(servicesChildren)
-
-servicesChildren.forEach(e => {
-        
-    e.addEventListener('mouseover', index => {
-        let serviceSvgs = document.querySelector('.service_svgs');
-        serviceSvgs.setAttribute('color', 'var(--primary-color)');
-        serviceSvgs.style.transition = 'var(--transition)';
-        console.log(element.target);
-    })
-
-    e.addEventListener('mouseout', () => {
-        serviceSvgs.removeAttribute('color');
-    })
-})
-
-// services.forEach(element => {
-//     element.addEventListener('mouseover', () => {
-//         serviceSvgs.setAttribute('color', 'red');
-//     });
-// });
