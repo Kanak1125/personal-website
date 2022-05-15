@@ -1,7 +1,7 @@
 //scroll event listener
 window.addEventListener("scroll", () => {
     const header = document.querySelector('header');
-    if(window.scrollY > 50) {
+    if(window.scrollY > 50 && !navLinks.classList.contains('active')) {
         header.classList.add("sticky");
     }
     else {
@@ -13,10 +13,11 @@ window.addEventListener("scroll", () => {
 
 //toggle nav-link style when clicked on menu-btn
 
+const navLinks = document.querySelector('.nav-links');
 const menuBtn = document.querySelector('.menu-btn');
 menuBtn.addEventListener('click', () => {
-    const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
+    // if(navLinks.classList.contains('active')){document.querySelector('header').classList.remove("sticky");}
     menuBtn.classList.toggle('animation');
 })
 
@@ -34,6 +35,30 @@ toggleTheme.addEventListener('click', () => {
         toggleTheme.classList.add('fa-moon');
     }
 });
+
+// owl carousel script
+$(document).ready(function() {
+    $(".team_profiles").owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplayTimeOut: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+           0: {
+               items: 1,
+               nav: false
+           }, 
+           600: {
+                items: 2,
+                nav: false
+            }, 
+            945: {
+                items: 3,
+                nav: false
+            } 
+        }
+    })
+})
 
 //hover eventListener for services section..
 const services = document.querySelector('.service_lists');

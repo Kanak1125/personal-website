@@ -8,6 +8,10 @@
     <title>My portfolio</title>
     <link rel="stylesheet" href="style2.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <section class="home">
@@ -101,8 +105,10 @@
                 <progress id = "html" value="90" max = "100"></progress> <br>
                 <label for="css"> CSS <span> 85% </span></label> <br> 
                 <progress id = "css" value="85" max = "100"></progress> <br>
-                <label for="js"> Javascript <span> 60% </span></label> <br> 
-                <progress id = "js" value="60" max = "100"></progress>
+                <label for="js"> Javascript <span> 75% </span></label> <br> 
+                <progress id = "js" value="75" max = "100"></progress>  <br>
+                <label for="jQuery"> JQuery <span> 70% </span></label> <br>
+                <progress id = "jQuery" value="70" max = "100"></progress>
             </div>
         </div>  
      </section>
@@ -112,61 +118,73 @@
         <div class="title">
             <h2> My teams </h2>
         </div>
-        <div class="team_profiles">
-            <div class="profile pro1">
-                <img src="" alt="">
-                <p> Name 1</p>
+        <div class="team_profiles owl-carousel">
+            <div class="profile">
+                <img src="images\aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="Aiony Haust">
+                <p> Aiony Haust</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
             </div>
             <div class="profile pro2">
-                <img src="" alt="">
-                <p> Name 2</p>
+                <img src="images\ben-parker-OhKElOkQ3RE-unsplash.jpg" alt="Ben Parker">
+                <p> Ben Parker</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
             </div>
             <div class="profile pro3">
-                <img src="" alt="">
-                <p> Name 3</p>
+                <img src="images\julian-wan-WNoLnJo7tS8-unsplash.jpg" alt="Julian Wan">
+                <p> Julian Wan</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            </div>
+            <div class="profile pro3">
+                <img src="images\kirill-balobanov-2rIs8OH5ng0-unsplash.jpg" alt="Kirill Balobanov">
+                <p> Kirill Balobanov</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            </div>
+            <div class="profile pro3">
+                <img src="images\lesly-juarez-RukI4qZGlQs-unsplash.jpg" alt="Lesly Juarez">
+                <p> Lesly Juarez</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
             </div>
         </div>
-        <button></button>
      </section>
 
      <!--Contact-->
      <section class="contact_me">
          <div class="title">
             <h2> Contact me </h2>
+         </div>
+         <div class="contact_container">
+            <div class="contact-info description">
+                <p> Get in Touch </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias exercitationem pariatur officia unde reprehenderit facere ratione quas eligendi optio. Velit.
+                </p>
+                <div class="contact">
+                   <i class="fas fa-user"></i>
+                   <p> Name <br><span>Kanak Shakya</span></p>
+                </div>
+                <div class="contact">
+                   <i class="fas fa-map-marker-alt"></i>
+                   <p> Address <br><span>Sundhara, Patan, Nepal</span></p>
+                </div>
+                <div class="contact">
+                   <i class="fas fa-envelope"></i>
+                   <p> Email <br><span>kanacsaqya0@gmail.com</span></p>
+                </div>  
+            </div>
+            <div class="message_me">
+                <p>Message me</p>
+                <form action="#">
+                    <input type="text" name="name" id="name" placeholder="Name">
+                    <input type="email" name="email" id="email" placeholder="Email"><br>
+                    <input type="text" name="subject" id="subject" placeholder="Subject"><br>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message.."></textarea>
+                </form>
+                <button class = "send_msg btn">Send message</button>
+            </div>
          </div>  
-         <div class="contact-info description">
-             <p> Get in Touch </p>
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias exercitationem pariatur officia unde reprehenderit facere ratione quas eligendi optio. Velit.
-             </p>
-             <div class="contact">
-                <i class="fas fa-user"></i>
-                <p> Name <br><span>Kanak Shakya</span></p>
-             </div>
-             <div class="contact">
-                <i class="fas fa-map-marker-alt"></i>
-                <p> Address <br><span>Patan, Nepal</span></p>
-             </div>
-             <div class="contact">
-                <i class="fas fa-envelope"></i>
-                <p> Email <br><span>kanak@gmail.com</span></p>
-             </div>  
-         </div>
-         <div class="message_me">
-             <form action="#">
-                 <input type="text" name="name" id="name" placeholder="Name">
-                 <input type="email" name="email" id="email" placeholder="Email"><br>
-                 <input type="text" name="subject" id="subject" placeholder="Subject"><br>
-                 <input type="text" name="message" id="message" placeholder="Message.." >
-             </form>
-             <button class = "sent_msg">Send message</button>
-         </div>
+         
      </section>
 
      <!--footer-->
      <footer> Created By <span>KanakShakya</span>|<i class="far fa-copyright"></i> 2022 All rights reserved.</footer>
-     <script src="script.js"></script>
 </body>
 </html>
