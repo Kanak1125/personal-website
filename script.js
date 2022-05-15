@@ -39,21 +39,21 @@ toggleTheme.addEventListener('click', () => {
 // owl carousel script
 $(document).ready(function() {
     $(".team_profiles").owlCarousel({
-        margin: 20,
-        loop: true,
+        margin: 20, // sets the margin of the '.profile' to 20px    
+        loop: true,     // loop is activated
         autoplayTimeOut: 2000,
         autoplayHoverPause: true,
         responsive: {
            0: {
-               items: 1,
+               items: 1,    //only a team-mate is shown on the page
                nav: false
            }, 
            600: {
-                items: 2,
+                items: 2,       //only 2 team-mates are shown
                 nav: false
             }, 
             945: {
-                items: 3,
+                items: 3,       
                 nav: false
             } 
         }
