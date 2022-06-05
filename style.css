@@ -265,12 +265,10 @@ span {
     header.sticky {
         
     }
-
     .main {
         top: 200px;
         font-size: 40px;
     }
-
     .about_me_wrapper {
         display: flex;
         height: 120vh;
@@ -284,18 +282,15 @@ span {
     header {
         padding: .5rem;
     }
-
     header p {
         padding-left: 1rem;
     }
-
     .main {
         top: 225px;
         font-size: 25px;
         left: 10vw;
         line-height: 50px;
     }
-
     .btn {
         margin-top: 100px;
     }

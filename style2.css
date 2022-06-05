@@ -22,9 +22,8 @@ body {
     --transform-img: scale(1.01);
 
     overflow-x: hidden;
-    display: grid;
-     /* grid-template-rows: repeat(3, 1fr) .8fr repeat(2, 1fr) auto; */
-    /* max-height: auto; */
+    display: flex;
+    flex-direction: column;
 }
 body.dark {
     --primary-color: #4a72fa;
@@ -36,19 +35,16 @@ body.dark {
 ::-webkit-scrollbar {
     width: 6px;
   }
-  
   /* Track */
   ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey; 
     border-radius: 10px;
   }
-   
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: var(--primary-color); 
     border-radius: 10px;
   }
-  
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #2540d3;
@@ -59,10 +55,8 @@ span {
 }
 .home {
     width: 100vw;
-    height: 100vh;
     color: var(--default-text-color);
     max-width: 100vw;
-    overflow: hidden;
     background-color: var(--bg-color-2);
 }
 header {
@@ -84,7 +78,7 @@ header p {
     padding-right: 6rem;
     list-style-type: none;
 }
-.nav-links > li > a {
+a {
     color: var(--default-text-color);
     transition: var(--transition);
 }
@@ -122,14 +116,13 @@ header.sticky span {
 
 /* home main section */
 .main {
-    position: absolute;
-    /* top: 10rem; */
-    top: calc((100vh - 80px)/2.8);      /*total view height will be subtracted by 80px(i.e. nav-bar) and the result will be divided by 2.8 to get responsive top-position
-    ----Here, top: 31.0760667904vh */
-    
     font-size: 45px;
-    left: 70px;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5rem;
+    padding: 7rem 5rem;
 }
 .main span {
     font-size: 55px;
@@ -139,11 +132,8 @@ header.sticky span {
     color: var(--default-text-color);
 }
 .home_page_img {
-    position: absolute;
     width: 500px;
     height: 250px;
-    top: calc((100vh - 80px)/2.5);
-    right: 50px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     transition: var(--transition);
@@ -171,11 +161,11 @@ header.sticky span {
 
 /* about-me section */
 .about_me {
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 50px 80px;
+    padding: 5rem;
     background-color: var(--primary-bg-color);
+    justify-content: center;
 }
 .title {
     position: relative;
@@ -184,7 +174,6 @@ header.sticky span {
     color: var(--default-text-color);
     margin-bottom: 60px;
     padding-bottom: 20px;
-    /* position: relative; */
 }
 .title::before {
     content: "";
@@ -195,9 +184,6 @@ header.sticky span {
     background: var(--default-text-color);
     left: 50%;
     transform: translateX(-50%);
-}
-.about_me .title::before {
-    bottom: 0px;
 }
 .title::after {
     content: "who I am";
@@ -215,7 +201,6 @@ header.sticky span {
 .about_me_wrapper {
     display: flex;
     align-items: center;
-    height: 100vh;
     gap: 10rem;
 }
 .img {
@@ -236,9 +221,11 @@ header.sticky span {
     font-weight: bold;
     line-height: 50px;
 }
-.download_cv {
+button.download_cv {
     width: 120px;
 }
+
+/* service section */
 .services {
     background: var(--primary-bg-color);
 }
@@ -273,7 +260,6 @@ header.sticky span {
 }
 
 /*skill section*/
-
 .skills {
     background: var(--primary-bg-color);
 }
@@ -467,13 +453,12 @@ textarea {
     justify-self: flex-start;
 }
 footer {
-    height: 7.5vh;
     background: var(--primary-bg-color);
     color: var(--default-text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 1rem;
+    padding: 2rem 0;
 }
 /* responsive media query starts from here */
 
@@ -481,7 +466,6 @@ footer {
 @media (max-width: 1150px) {
     .main {
         font-size: 35px;
-        top: 11.5rem;
     }
     .main span {
         font-size: 45px;
@@ -489,15 +473,13 @@ footer {
     .home_page_img {
         width: 450px;
         height: 225px;
-        top: 200px;
-        right: 35px;
     }
     .contact_container {
         margin: 5px 40px;
     }
     form > input,
     form textarea{
-        width: 150px;
+        max-width: 150px;
     }
     #subject {
         width: 315px;
@@ -539,8 +521,7 @@ footer {
         width: 100%;
         height: 100vh;
         position: absolute;
-        left: 0;
-        bottom: 0;
+        inset: 0;
         z-index: 100;
         display: flex;
         flex-direction: column;
@@ -548,17 +529,10 @@ footer {
         justify-content: center;
     }
     .main {
-        position: relative;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        /* top: 10rem; */
         font-size: 30px;
         font-weight: bold;
-        display: grid;
-        grid-template-rows: repeat(2,1fr);
-        align-items: center;
-        justify-content: center;
+        flex-direction: column;
+        padding: 6rem 5rem;
         text-align: center;
     }
     .main span {
@@ -634,7 +608,6 @@ footer {
         padding: 10px 50px 50px;
     }
     .contact_container {
-        display: grid;
         grid-template-columns: none;
         grid-template-rows: repeat(2, 1fr);
         text-align: center;
